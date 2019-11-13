@@ -46,12 +46,23 @@ $('.click-jq').click(() => {
 });
 
 const display = document.querySelector('.calc .display');
-document.querySelectorAll('.calc .digits button, .calc .opers button')
+document.querySelectorAll('.calc .digits button')
     .forEach( button => button.addEventListener('click', digitOperPressed));
 
 function digitOperPressed(event) {
     const btnText = event.target.innerText;
     display.value += btnText;
+    console.log(btnText);
+}
+
+const display1 = document.querySelector('.calc .display');
+document.querySelectorAll('.calc .opers button')
+    .forEach( button => button.addEventListener('click', digitOperPressed));
+
+function digitOperPressed1(event) {
+    const btnText = event.target.innerText;
+    display.value += btnText;
+    console.log(btnText);
 }
 
 document.querySelector('.calc .eq')
